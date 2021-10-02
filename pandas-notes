@@ -1,0 +1,10 @@
+Pandas basics:
+
+import pandas as pd
+df = pd.read_csv('path_name')
+df - displays first and last 5 rows along with first and last 10 branches
+df.shape - attribute giving out no of rows and cols
+df.info() - column name, non-null entries and datatype
+df.head(num_of_rows)
+df.tail(num_of_rows)
+
