@@ -8,3 +8,6 @@ df.info() - column name, non-null entries and datatype
 df.head(num_of_rows)
 df.tail(num_of_rows)
 
+pd.set_option('display.max_columns', 100)
+pd.set_option('display.max_rows', 100)
+
