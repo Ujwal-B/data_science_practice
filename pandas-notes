@@ -11,3 +11,16 @@ df.tail(num_of_rows)
 pd.set_option('display.max_columns', 100)
 pd.set_option('display.max_rows', 100)
 
+df = pd.DataFrame(dict) - get a dataframe from a dictionary
+series - single column of rows in a df
+df.email - single column of emails
+df[['col1','col2']] - select multiple columns
+df.columns - list all available columns
+
+df.iloc[row_num] - select particular row
+df.iloc[[r1, r2, ...]] - select multiple rows
+df.iloc[[r1, r2], [c1, c2]]
+
+df.loc[[r1,r2,...], ['col1', 'col2',...]] - select rows and columns based on column names instead of column numbers
+
+df.loc[2:10, 'col3':'col6'] - list slicing - rows from 2 to 10 and columns from 3 to 6
