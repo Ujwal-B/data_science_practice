@@ -2,6 +2,7 @@ Pandas basics:
 
 import pandas as pd
 df = pd.read_csv('path_name')
+df = pd.read_csv('path_name', index_col='colname') - set index column while reading the file itself
 df - displays first and last 5 rows along with first and last 10 branches
 df.shape - attribute giving out no of rows and cols
 df.info() - column name, non-null entries and datatype
@@ -20,7 +21,9 @@ df.columns - list all available columns
 df.iloc[row_num] - select particular row
 df.iloc[[r1, r2, ...]] - select multiple rows
 df.iloc[[r1, r2], [c1, c2]]
-
 df.loc[[r1,r2,...], ['col1', 'col2',...]] - select rows and columns based on column names instead of column numbers
-
 df.loc[2:10, 'col3':'col6'] - list slicing - rows from 2 to 10 and columns from 3 to 6
+
+df.set_index('col_name', inplace=True) - sets alternative index instead of default numbering starting from 0. Values do NOT have to be unique. inplace argument is optional - it permanently changes the indices of the dataframe
+df.reset_index(inplace=True) - obvious. inplace is optional
+df.sort_index(ascending=False) - sorts index alphabetically - ascending=False is optional. If used, it sorts indices in descending order
