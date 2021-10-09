@@ -87,3 +87,7 @@ df.drop(index=4, inplace=True)
 
 filt = df['last'] == 'Doe'
 df.drop(index=df[filt].index, inplace=True)
+
+df.sort_values(by='first')
+df.sort_values(by='first', ascending=False)
+df.sort_values(by=['last', 'first'])
