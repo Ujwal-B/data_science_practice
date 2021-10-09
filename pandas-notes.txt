@@ -46,4 +46,26 @@ filt = df['LanguageHaveWorkedWith'].str.contains('Python', na=False)
 df.loc[filt, 'LanguageHaveWorkedWith']
 .str.contains() is a string method which finds whether the given substring is a part of the whole string or not
 
+df.columns = ['newcolname1', 'newcolname2', 'newcolname3',...,'newcolnamen'] - change column names by passing a list of new column names
+df.columns = [x.upper() for x in df.columns] - list comprehension to modify all columns (here using upper() function)
+df.columns = df.columns.str.replace(' ', '_') - find strings which contain ' ' and replace it with '_'
 
+columns = {'first_name':'first', 'last_name':'last'}
+df.rename(columns, inplace=True)
+-- rename specific columns by passing a dictionary containing pairs of old names and their replacement
+
+df.loc[2] = ['Ujwal', 'Bharadwaj', 'ujwal@email.com'] - change all columns of row 2
+df.loc[2, ['last', 'email']] = ['R', 'ujwal@gmail.com'] - select only those columns which need to be modified and send a list with modified values
+df.loc[2, 'last'] = 'Bharadwaj' - single value changes don't need list
+df.at[2, 'last] = 'R' - alternative to .loc while replacing values
+
+filt = (df['email'] == 'ujwal@gmail.com')
+df.loc[filt, 'last'] = 'Bharadwaj'
+-- apply filter and change value
+
+df['email'] = df['email'].str.lower() - change all values of email column to lowercase
+
+df.apply(lambda: x:x.min())
+df.applymap(len)
+df['first_name'].map({'Ujwal':'Ulhas', 'R':'Bharadwaj'}) - replaces key with value from the dictionary. However, if other values present in thr df aren't written in the dictionary, it replaces them with NaN
+df['first_name'].replace({'Ujwal':'Ulhas', 'R':'Bharadwaj'}) - same as above, except it doesn't substitute values not mentioned in the dictionary
