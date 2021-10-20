@@ -35,7 +35,7 @@ df[filt]
 df[filt, ['col1','col2','col3',...]]
 filt = (df['Country'] == 'India') & (df['SurveyEase'] == 'Easy') - Combine 2 conditions. & or | can be used according to the requirement
 df.loc[~filt] - The '~' symbols gives whatever doesn't have 'True' as a value. Basically 'NOT'
-high_sal = (df['Salary_in_usd'] > 70000) - comaprision operators can be used
+high_sal = (df['Salary_in_usd'] > 70000) - comparision operators can be used
 
 countries = ['country1', 'country2', 'country3']
 filt = df['Country'].isin(countries)
